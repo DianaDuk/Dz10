@@ -1,0 +1,84 @@
+<script>
+    const contactBook = {
+        contacts:[
+            {name: 'Alice', phone: '055-86-541', email: 'aliceK@gmail.com'},
+            {name: 'Bob', phone: '024-65-987', email: 'bobSnail@gmail.com'},
+            {name: 'Gygy', phone: '074-12-852', email: 'HeyGygy@gmail.com'},
+            {name: 'Dima', phone: '085-15-452', email: 'Dimas45@gmail.com'},
+            {name: 'Lina', phone: '452-45-196', email: 'Lina4ka12@gmail.com'}
+        ],
+       
+
+    addContact: function(){
+        const name = prompt('Enter name:');
+        const phone = prompt('Enter phone number:');
+        const email = prompt('Enter email:');
+
+        if (name && phone && email) {
+    this.contacts.push({name, phone, email});
+    alert(`Contact ${name} added successfully.`);
+    } else{
+        alert(`All fields are mandatory!`);
+    } 
+},
+
+    findContact: function(){
+        const name = prompt('Enter name for search:');
+    if (name) {
+        const contact = this.contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase());
+    if (contact) {
+        alert(`Contact found: ${contact.name}, Phone: ${contact.phone}, Email: ${contact.email}`);
+    } else {
+        alert(`Contact with name ${name} not found.`);
+    }
+    } else {
+        alert('Please, enter name for search!');
+    }
+}
+    };
+
+    contactBook.addContact();
+    contactBook.findContact();
+
+   /* const contactBook = {
+  contacts: [
+    { name: 'Alice', phone: '055-86-541', email: 'aliceK@gmail.com' },
+    { name: 'Bob', phone: '024-65-987', email: 'bobSnail@gmail.com' },
+    { name: 'Gygy', phone: '074-12-852', email: 'HeyGygy@gmail.com' },
+    { name: 'Dima', phone: '085-15-452', email: 'Dimas45@gmail.com' },
+    { name: 'Lina', phone: '452-45-196', email: 'Lina4ka12@gmail.com' }
+  ],
+
+  addContact: function() {
+    const name = prompt('Enter name:');
+    const phone = prompt('Enter phone number:');
+    const email = prompt('Enter email:');
+
+    if (name && phone && email) {
+      this.contacts.push({ name, phone, email });
+      alert(`Contact ${name} added successfully.`);
+    } else {
+      alert('All fields are mandatory!');
+    }
+  },
+
+  findContact: function() {
+    const name = prompt('Enter name for search:');
+    if (name) {
+      const contact = this.contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase());
+      if (contact) {
+        alert(`Contact found: ${contact.name}, Phone: ${contact.phone}, Email: ${contact.email}`);
+      } else {
+        alert(`Contact with name ${name} not found.`);
+      }
+    } else {
+      alert('Please enter a name for search.');
+    }
+  }
+};
+
+
+contactBook.addContact();
+contactBook.findContact();*/
+
+</script>
